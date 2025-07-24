@@ -1,0 +1,5 @@
+body { font-family: Arial; padding: 20px; }
+h1 { font-size: 2em; text-align: center; }
+.columns { display: flex; }
+.column { flex: 1; padding: 10px; }
+.dashboard { margin-top: 30px; }

@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RCTIA Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to Rash Cyber Threat Intelligence Platform</h1>
+    <h2>CTIA - Threat Advisories</h2>
+    <ul>
+        {% for advisory in advisories %}
+        <li><a href="/advisory/{{ loop.index0 }}">{{ advisory.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>IOC Types</h2>
+    {% for category, details in iocs.items() %}
+    <h3>{{ category }}</h3>
+    {% for ioc_type, values in details.items() %}
+        <strong>{{ ioc_type }}</strong>
+        <ul>
+            {% for v in values %}
+            <li>{{ v }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    {% endfor %}
+</body>
+</html>

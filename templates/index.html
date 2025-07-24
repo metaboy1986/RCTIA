@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RCTIA</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Welcome to Rash Cyber Threat Intelligence Platform</h1>
+    <div class="columns">
+        <div class="column">
+            <h2>CTIA</h2>
+            <ul>
+                {% for advisory in advisories %}
+                <li><a href="/advisory/{{ loop.index0 }}">{{ advisory.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="column">
+            <h2>IOC Types</h2>
+            {% for ioc_type, items in iocs.items() %}
+            <h3>{{ ioc_type }}</h3>
+            <ul>
+                {% for item in items %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="dashboard">
+        <h2>CTIA - Top 5 Advisory Titles</h2>
+        <ol>
+            {% for advisory in advisories[:5] %}
+            <li>{{ advisory.title }}</li>
+            {% endfor %}
+        </ol>
+        <h2>IOC Summary</h2>
+        <p>Virus: 25 | Worm: 50 | Trojan: 10 | Ransomware: 50 | Other: 135</p>
+    </div>
+</body>
+</html>

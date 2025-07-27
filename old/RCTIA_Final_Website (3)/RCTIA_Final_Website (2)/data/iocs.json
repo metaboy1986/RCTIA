@@ -1,0 +1,22 @@
+[
+  {
+    "type": "IP Address",
+    "category": "Virus",
+    "value": "192.168.1.1"
+  },
+  {
+    "type": "Domain",
+    "category": "Worm",
+    "value": "malicious.com"
+  },
+  {
+    "type": "URL",
+    "category": "Trojan",
+    "value": "http://bad.url"
+  },
+  {
+    "type": "SHA Value",
+    "category": "Ransomware",
+    "value": "abcd1234"
+  }
+]

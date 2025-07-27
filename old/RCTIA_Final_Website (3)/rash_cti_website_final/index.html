@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Rash - Cyber Threat Intelligence platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="content">
+        <h1>Welcome to Rash - Cyber Threat Intelligence platform</h1>
+
+        <div class="dropdowns">
+            <label for="iocType">Select IOC Type:</label>
+            <select id="iocType" onchange="filterIOCs()">
+                <option value="all">All</option>
+                <option value="ip">IP Address</option>
+                <option value="domain">Domain</option>
+                <option value="url">URL</option>
+                <option value="hash">Hash</option>
+            </select>
+        </div>
+
+        <div class="ioc-list">
+            <h2>Indicators of Compromise</h2>
+            <ul id="iocItems">
+                <li data-type="ip">1.1.1.1</li>
+                <li data-type="ip">22.2.2.2</li>
+                <li data-type="ip">3.3.3.33</li>
+                <li data-type="ip">4.4.44.4</li>
+                <li data-type="domain">malicious-site.com</li>
+                <li data-type="url">http://evil.com/bad</li>
+                <li data-type="hash">e3b0c44298fc1c149afbf4c8996fb924</li>
+            </ul>
+        </div>
+
+        <div class="advisories">
+            <h2>Top Threat Advisories</h2>
+            <ul>
+                <li><a href="rctia_template.html#threat1">APT29 - Russian threat actor</a></li>
+                <li><a href="rctia_template.html#threat2">Qakbot Malware Campaign</a></li>
+                <li><a href="rctia_template.html#threat3">Log4Shell Exploitation</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function filterIOCs() {
+            var selectedType = document.getElementById("iocType").value;
+            var items = document.querySelectorAll("#iocItems li");
+            items.forEach(function(item) {
+                if (selectedType === "all" || item.dataset.type === selectedType) {
+                    item.style.display = "list-item";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

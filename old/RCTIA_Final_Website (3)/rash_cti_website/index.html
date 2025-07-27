@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Rash - Cyber Threat Intelligence Platform</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #000; color: white; margin: 0; padding: 0; }
+        .stars { position: absolute; width: 100%; height: 100%; background: transparent; overflow: hidden; }
+        .star { position: absolute; background: white; width: 2px; height: 2px; animation: fall 3s linear infinite; }
+        @keyframes fall {
+            0% { transform: translateY(0) }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        header { padding: 20px; text-align: center; background: rgba(0,0,0,0.8); }
+        h1 { color: #00ffff; }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <header>
+        <h1>Welcome to Rash - Cyber Threat Intelligence Platform</h1>
+    </header>
+    <script>
+        const stars = document.querySelector('.stars');
+        for(let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            stars.appendChild(star);
+        }
+    </script>
+</body>
+</html>
